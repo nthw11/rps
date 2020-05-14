@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors</title>
+</head>
+<body>
+    <div>
+        <h2>Please open console to play!</h2>
+        <br>
+        <button onclick="fullGame()">"Play a game!"</button>
+        <br>
+
+    </div>
+    <script>
+
+
+let computerScore=0;
+let playerScore=0;
+let gameCount=0;
+
+
+
+function playerHand(){
+    playerSelection = prompt
+        ("choose your hand shape for victory! rock, paper or scissors only, please!").toLowerCase();
+        console.log("You chose "+ playerSelection);
+        if (playerSelection === "rock"){
+            return playerSelection;
+
+        }
+        else if (playerSelection === "paper"){
+        
+            return playerSelection;
+        }
+        else if (playerSelection === "scissors"){
+        
+        return playerSelection;
+        }
+        
+        else {
+            alert("please try again!");
+            playerHand();
+      
+        }
+}
+        function computerHand(){
+ 
+        let computerSelection = Math.floor(Math.random()*(4 - 1)) +1;
+        if (computerSelection == 1) {
+            console.log("computer chose rock!")
+            return "rock";
+            
+        }
+            else if (computerSelection == 2){
+                console.log("computer chose paper!")
+                return "paper";
+            }
+            else if (computerSelection == 3){
+                console.log("computer chose scissors!")
+                return "scissors";
+            }}
+
+function gamePlay(playerSelection, computerSelection){
+
+
+            if (playerSelection == "rock" && computerSelection == "paper") {
+            console.log("you lose!");
+            computerScore++;
+            gameCount++;
+            }
+            else if (playerSelection == "rock" && computerSelection =="scissors") {
+            console.log("you win!")
+            playerScore++;
+            gameCount++;
+        }
+            else if (playerSelection == "paper" && computerSelection == "rock") {
+            console.log("you win!");
+            playerScore++;
+            gameCount++;
+            }
+            else if (playerSelection == "paper" && computerSelection == "scissors") {
+            console.log("you lose!");
+            computerScore++;
+            gameCount++;
+            }
+            else if (playerSelection == "scissors" && computerSelection == "rock") {
+            console.log("you lose!");
+            computerScore++;
+            gameCount++;
+            }
+            else if (playerSelection == "scissors" && computerSelection == "paper") {
+            console.log("you win!");
+            playerScore++;
+            gameCount++;
+            }
+
+            else if (playerSelection == computerSelection ){
+            console.log("tie!")
+            gameCount++;
+            }
+            
+        }
+
+    function fullGame() {
+        for (gameCount = 0; gameCount < 5 ;) {
+            gamePlay(playerHand(), computerHand());}
+
+                console.log("game over!");
+                console.log("you played " + gameCount + " games!");
+                console.log("computer score: " + computerScore + " your score: " + playerScore);
+            if (computerScore > playerScore) {
+                console.log("the computer wins! click the button to try again!");
+            }
+            else if (computerScore < playerScore) {
+                console.log("you are the winner! click the button to play again!");
+                }
+            else if (computerScore === playerScore) {
+                console.log("it is a tie. click the button to try again!");
+             
+            }
+            }
+            
+ 
+
+    </script>
+</body>
+</html>
